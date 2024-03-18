@@ -602,6 +602,8 @@ class Payzer(object):
 
             elif user == "dl-ngrok":payrok.PayRok.dls()
 
+            elif user == "paths":print(json.dumps(PayPaths.pths, indent=4))
+
             elif user == "exit":exit()
 try:
     Payzer.start()

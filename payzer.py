@@ -590,12 +590,22 @@ class Payzer(object):
 
                 if ishttp == True:
                     if isport == True:
-                        app.stableConnection("http", int(text[text.index("port")+1]))
-                    else:app.stableConnection("http")
+                        try:
+                            app.stableConnection("http", int(text[text.index("port")+1]))
+                        except Exception as ER:Log.err(ER)
+                    else:
+                        try:
+                            app.stableConnection("http")
+                        except Exception as ER:Log.err(ER)
                 elif ishttps == True:
                     if isport == True:
-                        app.stableConnection("https", int(text[text.index("port")+1]))
-                    else:app.stableConnection("https")
+                        try:
+                            app.stableConnection("https", int(text[text.index("port")+1]))
+                        except Exception as ER:Log.err(ER)
+                    else:
+                        try:
+                            app.stableConnection("https")
+                        except Exception as ER:Log.err(ER)
                 else:Log.err("No Method selected")
 
             elif user == "gettun":print(payrok.PayRok.getTunnels())

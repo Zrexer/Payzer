@@ -75,8 +75,8 @@ class Console(object):
         print(f'{payobj.paycolor.colors.END}{padding}                           by Zrexer\n')
 
     def starterPrint():
-        print(f"{payobj.paycolor.colors.white}[{payobj.paycolor.colors.META}INFO{payobj.paycolor.colors.white}] Created and Published by {payobj.paycolor.colors.ORANGE}Zrexer")
-        print(f"{payobj.paycolor.colors.white}[{payobj.paycolor.colors.META}INFO{payobj.paycolor.colors.white}] https://github.com/Zrexer")
+        print(f"{payobj.paycolor.colors.white}[{payobj.paycolor.colors.META}{payobj.paycolor.colors.white}] Created and Published by {payobj.paycolor.colors.ORANGE}Zrexer")
+        print(f"{payobj.paycolor.colors.white}[{payobj.paycolor.colors.META}{payobj.paycolor.colors.white}] https://github.com/Zrexer")
 
     def streamPrompt():
         user = str(input(f"{payobj.paycolor.colors.white}{payobj.paycolor.colors.underline}Payzer{payobj.paycolor.colors.white} > "))

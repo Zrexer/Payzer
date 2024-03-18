@@ -604,6 +604,10 @@ class Payzer(object):
 
             elif user == "paths":print(json.dumps(PayPaths.pths, indent=4))
 
+            elif user == "ls":import os;os.system("ls")
+
+            elif user == "cls" or user == "clear":import os;os.system("cls || clear")
+
             elif user == "exit":exit()
 try:
     Payzer.start()

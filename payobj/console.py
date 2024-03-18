@@ -1,7 +1,6 @@
 import payobj.paycolor
 import time
 import os 
-import pystyle
 
 os.system("")
 

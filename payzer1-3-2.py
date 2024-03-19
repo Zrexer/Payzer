@@ -174,7 +174,7 @@ class Payzer(object):
                 else:
                     if cont in Help.dictData.keys():
                         import json
-                        print(json.dumps(Help.moreDetails[cont], indent=4).replace("{", "").replace("}", "").replace('"', ""))
+                        print(json.dumps(Help.moreDetails[cont], indent=4).replace("{", "").replace("}", "").replace('"', "").replace(",", ""))
                     else:console.Console.promptMessage(Help.dictData)
             
             elif user.startswith("make"):

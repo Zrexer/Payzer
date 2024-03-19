@@ -725,7 +725,7 @@ class Payzer(object):
                     print(json.dumps(payxss.Payxss.selector(), indent=3).replace("[", "").replace("]", ""))
                     print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
                 else:
-                    if page == "1":print(json.dumps(1, indent=3).replace("[", "").replace("]", ""))
+                    if page == "1":print(json.dumps(payxss.Payxss.selector(1), indent=3).replace("[", "").replace("]", ""))
                     elif page == "2":print(json.dumps(payxss.Payxss.selector(2), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
                     elif page == "3":print(json.dumps(payxss.Payxss.selector(3), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
                     elif page == "4":print(json.dumps(payxss.Payxss.selector(4), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")

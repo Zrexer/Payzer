@@ -3,6 +3,8 @@ from payobj import payrok
 from payobj import payid
 from payobj import payenc
 from payobj import payload
+from payobj import payxss
+from payobj import paybrow
 from payobj import paycolor as colors
 
 class Help:
@@ -53,7 +55,7 @@ class Help:
             "details": "Get the ready xss sources",
             "args_count": 0,
             "args": [],
-            "example": ["  roxss"]
+            "example": ["  roxss", "  roxss 3"]
         },
         "browse": {
             "details": "Open links with this command also this command tested on Windows and Linux and i dont think about it does work on android or doesnt",
@@ -157,13 +159,14 @@ class Payzer(object):
         console.Console.loadingAnimation(f"{colors.colors.white}[{colors.colors.UPDATES}] Drink a Coffee ...")
         hexId = payid.PayID.makePrivateUID()
         print()
+        print(f"{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] For more information type 'help'")
 
         while 1:
             data = console.Console.streamPrompt()
             user: str = data['user']
             text: list = data['splited']
 
-            if user == "help":
+            if user.startswith("help"):
                 print()
                 cont = user.replace("help ", "")
                 if cont == "help":
@@ -175,7 +178,6 @@ class Payzer(object):
                     else:console.Console.promptMessage(Help.dictData)
             
             elif user.startswith("make"):
-                print()
                 iscall = False
                 txtdata = {}
                 nums = 0
@@ -715,6 +717,29 @@ class Payzer(object):
                             else:Log.err(f"The file {command.split()[0]} Does not a Folder or DIR")
                         else:Log.err(f"The file {command.split()[0]} Does not exists")
                     else:os.system(command)
+
+            elif user.startswith("roxss"):
+                import json
+                page = user.replace("roxss ", "")
+                if page == "roxss":
+                    print(json.dumps(payxss.Payxss.selector(), indent=3).replace("[", "").replace("]", ""))
+                    print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                else:
+                    if page == "1":print(json.dumps(1, indent=3).replace("[", "").replace("]", ""))
+                    elif page == "2":print(json.dumps(payxss.Payxss.selector(2), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                    elif page == "3":print(json.dumps(payxss.Payxss.selector(3), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                    elif page == "4":print(json.dumps(payxss.Payxss.selector(4), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                    elif page == "5":print(json.dumps(payxss.Payxss.selector(5), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                    elif page == "6":print(json.dumps(payxss.Payxss.selector(6), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                    elif page == "7":print(json.dumps(payxss.Payxss.selector(7), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                    elif page == "8":print(json.dumps(payxss.Payxss.selector(8), indent=3).replace("[", "").replace("]", ""));print(f"""{colors.colors.white}[{colors.colors.MAIN}INFO{colors.colors.white}] To see the real code, delete the ' " ' of the starts and ends the code""")
+                    else:Log.err(f"The XSS Payloads are 8000, we split them to 1000, if you select 4, Payzer going to send 4001 to 5000 XSS Paylods, so we have not {page} pages or slices")
+            
+            elif user.startswith("browse"):
+                browse = user.replace("browse ", "")
+                if browse == "browse":Log.err("Cannot get the link, for more information type 'help browse'")
+                else:
+                    paybrow.Paybrow.openUrl(browse)
 
             elif user == "gettun":print(payrok.PayRok.getTunnels())
 

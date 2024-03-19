@@ -79,5 +79,5 @@ class Console(object):
         print(f"{payobj.paycolor.colors.white}[{payobj.paycolor.colors.META}{payobj.paycolor.colors.white}] https://github.com/Zrexer")
 
     def streamPrompt():
-        user = str(input(f"{payobj.paycolor.colors.white}{payobj.paycolor.colors.underline}Payzer{payobj.paycolor.colors.white} > "))
+        user = str(input(f"\r{payobj.paycolor.colors.white}{payobj.paycolor.colors.underline}Payzer{payobj.paycolor.colors.white} > "))
         return {"user": user, "splited": user.split()}

@@ -154,7 +154,7 @@ class Payzer(object):
     def start():
         console.Console.printBanner()
         console.Console.starterPrint()
-        console.Console.loadingAnimation(f"{colors.colors.white}[{colors.colors.yellow}UPDATES{colors.colors.white}] Drink a Coffee ...")
+        console.Console.loadingAnimation(f"{colors.colors.white}[{colors.colors.UPDATES}] Drink a Coffee ...")
         hexId = payid.PayID.makePrivateUID()
         print()
 

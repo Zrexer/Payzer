@@ -170,7 +170,8 @@ class Payzer(object):
                     console.Console.promptMessage(Help.dictData)
                 else:
                     if cont in Help.dictData.keys():
-                        console.Console.promptMessage(Help.moreDetails[cont])
+                        import json
+                        print(json.dumps(Help.moreDetails[cont], indent=4).replace("[", "").replace("]", ""))
                     else:console.Console.promptMessage(Help.dictData)
             
             elif user.startswith("make"):
